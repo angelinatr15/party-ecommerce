@@ -1,14 +1,13 @@
-import inventory from './inventory'
-
-async function fetchCategories () {
-  const categories = inventory.reduce((acc, next) => {
-    next.categories.map(category => {
-      if (acc.includes(category)) return
-      acc.push(category)
-    })
-    return acc
-  }, [])
-  return Promise.resolve(categories)
+function fetchCategories(inventory) {
+  const categories = inventory?.reduce((acc, next) => {
+    const currentCategories = next.categories.split(",");
+    currentCategories.map((category) => {
+      if (acc.includes(category)) return;
+      acc.push(category);
+    });
+    return acc;
+  }, []);
+  return categories;
 }
 
-export default fetchCategories
+export default fetchCategories;

@@ -3,7 +3,7 @@ import ListItem from "../../components/ListItem";
 import { titleIfy, slugify } from "../../utils/helpers";
 import fetchCategories from "../../utils/categoryProvider";
 import CartLink from "../../components/CartLink";
-import { getProductsByCategory } from "../api/products";
+import { getProducts, getProductsByCategory } from "../api/products";
 
 const Category = (props) => {
   const { inventory, title } = props;
@@ -47,7 +47,8 @@ const Category = (props) => {
 };
 
 export async function getStaticPaths() {
-  const categories = await fetchCategories();
+  const inventory = await getProducts()
+  const categories = await fetchCategories(inventory);
   const paths = categories.map((category) => {
     return { params: { name: slugify(category) } };
   });

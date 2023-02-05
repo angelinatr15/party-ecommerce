@@ -16,8 +16,7 @@ export const getProductsByCategory = async (category) => {
 export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
-      const products = getProducts();
-      console.log(products);
+      const products = await getProducts();
       res.json(products);
     } catch (e) {
       console.log(e.message);

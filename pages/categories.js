@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import { titleIfy , slugify } from '../utils/helpers'
-import { DisplayMedium } from '../components'
-import CartLink from '../components/CartLink'
-import { fetchInventory } from '../utils/inventoryProvider'
+import Head from "next/head";
+import { titleIfy, slugify } from "../utils/helpers";
+import { DisplayMedium } from "../components";
+import CartLink from "../components/CartLink";
+import { getProducts } from "./api/products";
 
-function Categories ({ categories = [] }) {
+function Categories({ categories = [] }) {
   return (
     <>
       <div className="w-full">
@@ -50,33 +50,33 @@ function Categories ({ categories = [] }) {
   );
 }
 
-export async function getStaticProps() {
-  const inventory = await fetchInventory()
+export async function getServerSideProps() {
+  const inventory = await getProducts();
   const inventoryCategories = inventory.reduce((acc, next) => {
-    const categories = next.categories
-    categories.forEach(c => {
-      const index = acc.findIndex(item => item.name === c)
+    const categories = next.categories.split(",");
+    categories.forEach((c) => {
+      const index = acc.findIndex((item) => item.name === c);
       if (index !== -1) {
-        const item = acc[index]
-        item.itemCount = item.itemCount + 1
-        acc[index] = item
+        const item = acc[index];
+        item.itemCount = item.itemCount + 1;
+        acc[index] = item;
       } else {
         const item = {
           name: c,
-          image: next.image,
-          itemCount: 1
-        }
-        acc.push(item)
+          image: next.img_url,
+          itemCount: 1,
+        };
+        acc.push(item);
       }
-    })
-    return acc
-  }, [])
+    });
+    return acc;
+  }, []);
 
   return {
     props: {
-      categories: inventoryCategories
-    }
-  }
+      categories: inventoryCategories,
+    },
+  };
 }
 
-export default Categories
+export default Categories;

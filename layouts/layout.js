@@ -5,8 +5,8 @@ import { ToastContainer } from "react-toastify";
 import { navItemLength } from "../ecommerce.config";
 
 export default function Layout({ children, categories }) {
-  if (categories.length > navItemLength) {
-    categories = categories.slice(0, navItemLength);
+  if (categories?.length > navItemLength) {
+    categories = categories?.slice(0, navItemLength);
   }
   return (
     <div>
@@ -44,7 +44,7 @@ export default function Layout({ children, categories }) {
                   </p>
                 </a>
               </Link>
-              {categories.map((category, index) => (
+              {categories?.map((category, index) => (
                 <Link href={`/category/${slugify(category)}`} key={index}>
                   <a aria-label={category}>
                     <p
