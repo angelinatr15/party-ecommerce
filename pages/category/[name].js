@@ -47,14 +47,14 @@ const Category = (props) => {
 };
 
 export async function getStaticPaths() {
-  const inventory = await getProducts()
+  const inventory = await getProducts();
   const categories = await fetchCategories(inventory);
   const paths = categories.map((category) => {
     return { params: { name: slugify(category) } };
   });
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 }
 
@@ -67,6 +67,7 @@ export async function getStaticProps({ params }) {
       inventory,
       title: category,
     },
+    revalidate: 10,
   };
 }
 
