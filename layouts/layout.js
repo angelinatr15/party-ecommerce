@@ -22,7 +22,7 @@ export default function Layout({ children, categories }) {
               <Link href="/">
                 <a aria-label="Home">
                   <img
-                    src="/balloon-logo.jpeg"
+                    src="/cropped_icon.png"
                     alt="logo"
                     width="90"
                     height="28"
