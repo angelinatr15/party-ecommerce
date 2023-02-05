@@ -11,11 +11,11 @@ const Category = (props) => {
     <>
       <CartLink />
       <Head>
-        <title>Party ECommerce - {title}</title>
-        <meta name="description" content={`Party ECommerce - ${title}`} />
+        <title>MY PARTY PLACE - {title}</title>
+        <meta name="description" content={`MY PARTY PLACE  - ${title}`} />
         <meta
           property="og:title"
-          content={`Party ECommerce - ${title}`}
+          content={`MY PARTY PLACE - ${title}`}
           key="title"
         />
       </Head>

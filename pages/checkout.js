@@ -129,11 +129,11 @@ const Checkout = ({ context }) => {
   return (
     <div className="flex flex-col items-center pb-10">
       <Head>
-        <title>Party ECommerce - Checkout</title>
+        <title>MY PARTY PLACE - Checkout</title>
         <meta name="description" content={`Check out`} />
         <meta
           property="og:title"
-          content="Party ECommerce - Checkpit"
+          content="MY PARTY PLACE  - Checkpit"
           key="title"
         />
       </Head>

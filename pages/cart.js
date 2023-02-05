@@ -37,14 +37,14 @@ const Cart = ({ context }) => {
       <CartLink />
       <div className="flex flex-col items-center pb-10">
         <Head>
-          <title>Party ECommerce - Cart</title>
+          <title>MY PARTY PLACE - Cart</title>
           <meta
             name="description"
-            content={`Party ECommerce  - Shopping cart`}
+            content={`MY PARTY PLACE   - Shopping cart`}
           />
           <meta
             property="og:title"
-            content="Party ECommerce  - Cart"
+            content="MY PARTY PLACE   - Cart"
             key="title"
           />
         </Head>

@@ -10,14 +10,14 @@ function Categories({ categories = [] }) {
       <div className="w-full">
         <CartLink />
         <Head>
-          <title>Party ECommerce - All Categories</title>
+          <title>MY PARTY PLACE - All Categories</title>
           <meta
             name="description"
-            content={`Party ECommerce - All categories`}
+            content={`MY PARTY PLACE  - All categories`}
           />
           <meta
             property="og:title"
-            content="Party ECommerce - All Categories"
+            content="MY PARTY PLACE  - All Categories"
             key="title"
           />
         </Head>

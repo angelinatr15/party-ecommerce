@@ -88,7 +88,7 @@ export default function Layout({ children, categories }) {
         border-t border-gray-300"
         >
           <span className="block text-gray-700 text-xs">
-            Copyright © 2023 Party Ecommerce. All rights reserved.
+            Copyright © 2023 MY PARTY PLACE. All rights reserved.
           </span>
           <div
             className="

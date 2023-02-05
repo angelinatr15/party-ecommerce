@@ -18,12 +18,12 @@ const Home = ({ inventory = [], categories = [] }) => {
       <CartLink />
       <div className="w-full">
         <Head>
-          <title>Party ECommerce</title>
+          <title>MY PARTY PLACE </title>
           <meta
             name="description"
-            content="Party ECommerce Next provides a way to quickly get up and running with a fully configurable ECommerce site using Next.js."
+            content="MY PARTY PLACE  Next provides a way to quickly get up and running with a fully configurable ECommerce site using Next.js."
           />
-          <meta property="og:title" content="Party ECommerce" key="title" />
+          <meta property="og:title" content="MY PARTY PLACE " key="title" />
         </Head>
         <div
           className="bg-blue-300
