@@ -1,7 +1,7 @@
 const pool = require("../../../db/connection");
 
 export const getProducts = async () => {
-  const products = await pool.query("SELECT * FROM products");
+  const products = await pool.query("SELECT * FROM products ORDER BY id ASC");
   return products.rows;
 };
 
