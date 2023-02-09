@@ -2,7 +2,6 @@ import Head from "next/head";
 import {
   Center,
   Footer,
-  Tag,
   Showcase,
   DisplaySmall,
   DisplayMedium,
@@ -31,7 +30,6 @@ const Home = ({ inventory = [], categories = [] }) => {
         flex lg:flex-row flex-col"
         >
           <div className="pt-4 pl-2 sm:pt-12 sm:pl-12 flex flex-col">
-            <Tag year="2023" category="MY PARTY PLACE" />
             <Center
               price="10"
               title={inventory[4].name}

@@ -3,6 +3,7 @@ import { slugify } from "../utils/helpers";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { navItemLength } from "../ecommerce.config";
+import { Tag } from "../components";
 
 export default function Layout({ children, categories }) {
   if (categories?.length > navItemLength) {
@@ -21,13 +22,7 @@ export default function Layout({ children, categories }) {
             <div className="mb-4 sm:mr-16 max-w-48 sm:max-w-none">
               <Link href="/">
                 <a aria-label="Home">
-                  <img
-                    src="/cropped_icon.png"
-                    alt="logo"
-                    width="90"
-                    height="28"
-                    className="rounded-lg"
-                  />
+                  <Tag year="2023" category="MY PARTY PLACE" />
                 </a>
               </Link>
             </div>
